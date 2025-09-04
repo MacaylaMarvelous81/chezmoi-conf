@@ -1,0 +1,19 @@
+[user]
+	name = Jomar Milan
+	email = jomarm@jomarm.com
+	signingkey = F954C5C95AE7A312183DA76C6AC46A6F9A5618D8
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+	forceSignAnnotated = true
+[init]
+	defaultBranch = master
+[diff "json"]
+	textconv = jq .
+[sendemail]
+	smtpEncryption = ssl
+	smtpServer = smtp.emailarray.com
+	smtpUser = jomarm@jomarm.com
+[credential]
+	helper = /usr/share/git/credential/netrc/git-credential-netrc.perl

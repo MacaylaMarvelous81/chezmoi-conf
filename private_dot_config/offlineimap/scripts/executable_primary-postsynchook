@@ -1,0 +1,14 @@
+#!/bin/bash
+
+INCOMING_DIR=$HOME/Mail/INBOX/new
+MESSAGE=""
+
+if [[ $(ls $INCOMING_DIR | wc -l) -gt 0 ]]; then
+  for MAIL in $INCOMING_DIR/*; do
+    MESSAGE="$MESSAGE
+    $(grep -m1 '^Subject: ' $MAIL)"
+    mv $MAIL $HOME/Mail/INBOX/cur
+  done
+  aplay ~/.config/offlineimap/ForYou04.wav &
+  notify-send 'New Mail' "$MESSAGE" -a 'offlineimap hook' -i mail-message-new -t 5000
+fi

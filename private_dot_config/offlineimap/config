@@ -1,0 +1,20 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+accounts = Primary
+
+[Account Primary]
+localrepository = Primary-Local
+remoterepository = Primary-Remote
+postsynchook = ~/.config/offlineimap/scripts/primary-postsynchook
+
+[Repository Primary-Local]
+type = Maildir
+localfolders = ~/Mail
+
+[Repository Primary-Remote]
+type = IMAP
+remotehost = imap.emailarray.com
+remoteuser = jomarm@jomarm.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

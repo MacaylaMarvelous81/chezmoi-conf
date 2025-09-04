@@ -1,0 +1,10 @@
+#!/bin/sh
+
+awk -v machine=$1 '
+  $1 == "machine" {
+    if (m)
+      exit 1
+    if ($2 == machine) m =1
+  }
+  m && $1 == "password" {print $2; exit}
+' ~/.netrc
