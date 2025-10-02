@@ -14,7 +14,7 @@ return {
 
       table.insert(
         opts.source_selector.sources,
-        { source = "document_symbols", display_name = get_icon("DefaultFile", 1, true) .. "Symbols" }
+        { source = "document_symbols", display_name = get_icon("DefaultFile", 1, true) .. "Symbol" }
       )
 
       for i, v in pairs(opts.source_selector.sources) do
